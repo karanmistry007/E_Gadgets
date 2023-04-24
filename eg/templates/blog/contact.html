@@ -1,0 +1,494 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>E-Gadgets</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+    <link rel="stylesheet" href="https://kit.fontawesome.com/ab8f278cc1.css" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/ab8f278cc1.js" crossorigin="anonymous"></script>
+    
+    <style>
+        body{
+            /*background-image: linear-gradient(to bottom, #4aa4ff, #00bfff, #00d7ff, #00ecfb, #58ffea);*/
+            background-repeat: no-repeat;
+            text-align: center;
+            
+
+        }
+        .header_1{
+            display: flex;
+            gap: 50px;
+            padding-bottom: 35px;
+           
+            
+        }   
+        .logo{
+            font-size: 40px;
+            font-family: Trebuchet MS;
+            padding: 35px 0px 0px 30px;
+            
+            
+        } 
+        .search_form{
+            padding-top: 55px;
+            padding-left: 100px;
+            margin: 10px;
+            
+        }
+        .select_1{
+            font-size: 18px;
+            width: 150px;
+            height: 46px;
+            position:relative;
+            left: 4px;
+            bottom: 1px;
+            
+        }
+        .search_1{
+            font-size: 20px;
+            width: 400px;
+            height: 40px;
+        }
+        .search_1_search{
+            height: 46px;
+            width: 46px;
+            position: relative;
+            bottom: 3px;
+            right: 4px;
+            background-color: rgba(255, 255, 255, 0);
+            color:black;
+        
+        }
+        .search_1_cart{
+            height: 46px;
+            width: 46px;
+            position: relative;
+            bottom: 3px;
+            border: 0px;
+            background-color: rgba(255, 255, 255, 0);
+            color: black;
+            
+ 
+        }
+        .search_1_wish{
+            height: 46px;
+            width: 46px;
+            position: relative;
+            bottom: 3px;
+            margin-left: 10px;
+            border: 0px;
+            background-color: rgba(255, 255, 255, 0);
+            color: black;
+        }
+        .search_1_user{
+            height: 46px;
+            width: 46px;
+            position: relative;
+            bottom: 3px;
+            border: 0px;
+            background-color: rgba(255, 255, 255, 0);
+            color: black;
+        }
+
+        
+
+
+
+
+        .nav_bar{
+            background: linear-gradient(to left,#70c1ff,#749eff,#d780ff,#ff86d9);
+            display: flex;
+            
+            
+        }
+        .form_select{  
+            margin-left: 30px;
+            padding-left: 10px;
+            background-color:#262626; 
+            color: white;
+            padding-top:12px;
+        
+        }
+        .select_2{
+            font-size: 18px;
+            width: 200px;
+            height: 46px;
+            border: 0px;
+            background: #262626;
+            color: white;
+            
+            
+
+        }
+        .nav_1{
+            display: flex;
+            padding-left: 130px;
+                padding-top: 5px;
+            gap: 40px;
+            list-style-type: none;
+            height: 10px;
+            font-size: 20px;
+            
+        }
+        .a_1{
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            font-family: sans-serif
+        }
+        .support{
+            background: transparent;
+            border: 0px;
+            color: orange;
+            padding-left: 350px;
+        }
+        .support_text{
+            color: white;
+            font-size: 100%;
+            position: relative;
+            top: 8px;
+            left:5px;
+        }
+        #ul_1{
+            height: 2px;
+            width: 80px;
+            background: #ffbc00;
+            display: block;
+            margin: 0.5rem 0;
+        }
+        #ul_2{
+            height: 3px;
+            width: 100%;
+            background: #ffbc00;
+            display: block;
+            margin: 0.5rem 0;
+        }
+
+
+
+
+
+
+        #bg_color{
+            background-color:rgb(66, 66, 66);
+            color: lightgray;
+        }
+        #footer{
+            display: flex;
+            padding:50px 200px ;
+            gap: 300px;
+            text-align: left;
+        }
+        #list_2{
+            list-style-type: none;
+            text-align: left;
+        }
+        #social{
+            border-radius: 50%;
+            width: 6px;
+            height: 8px;
+            padding: 14px 20px 14px 14px;
+            line-height: 6px;
+            color: white;
+            background: grey;
+        }
+        #social:hover{
+            background-color: orange;
+            color: black;
+        }
+        #social_1{
+            color:white;
+            margin: 5px;
+        }
+        #copy{
+            text-align: center;
+            padding-bottom: 30px;
+        }
+        #list_2_1:hover{
+            color: orange;
+            text-align: center;
+        }
+        #bg_color_2{
+            padding: 10px 30px;
+        }
+        #bg_color_2:hover{
+            background-color: orange;
+        }
+        .pi{
+            border-radius: 100%;
+            width: 70px;
+            height: 70px;
+            line-height: 70px;
+            text-align: center;
+            padding: 30px;;
+            transition: all 1s;
+            color: white;
+            background: grey;
+            position: relative;
+        }
+        .pi:hover{
+            background: orange;
+            width: 100px;
+            height: 100px;
+            line-height: 90px;
+        }
+        .pr{
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            font-size: 28px;
+            background: #ffbc00;
+            color: white;
+            border-radius: 50%;
+            height: 15px;
+            width: 15px;
+            line-height: 15px;
+            padding: 16px;
+        }
+
+
+        .form-content {
+            position: relative;
+            margin: 20px 0 40px;
+            width: 300px;
+        }
+        .form-content input {
+            background-color: transparent;
+            border: 0;
+            border-bottom: 1px #888 solid;
+        
+            display: block;
+            width: 100%;
+            padding: 15px 0;
+            font-size: 18px;
+            color: #444;
+        }
+        
+        .form-content input:focus,
+        .form-content input:valid {
+            outline: 0;
+            border-bottom: #222 1.5px solid;
+        }
+        
+        .form-content label {
+            position: absolute;
+            top: 15px;
+            left: 0;
+        }
+        
+        .form-content label span {
+            display: inline-block;
+            font-size: 16px;
+            min-width: 5px;
+            transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            transition: 0.09s ease;
+        }
+        .form-content input:focus + label span,
+        .form-content input:valid + label span {
+            color: #444;
+            transform: translateY(-30px);
+        }
+        .contact{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            margin-left: 200px;
+            margin-right: 200px;
+        }
+        .textarea1{
+            width: 800px;
+            height: 100px;
+        }
+        #contact-1{   
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+        #conact-2{
+            display: flex;
+            flex-direction: column;
+        }
+        #pre_1{
+            text-align: left;
+        }
+        #up_foot{
+            background-color: #ffbc00;
+            font-size: 200%;
+            color: white;
+            padding: 50px;
+            margin-top: 50px;
+        }
+
+
+    </style>
+
+
+</head>
+<body>
+    <header>
+        <div class="header_1">
+            <h1 class="logo">
+                E-Gadgets
+            </h1>
+
+            <form class="search_form">
+                <select class="select_1">
+                    <option>All Category</option>
+                    <option>Computers & Accessories</option>
+                    <option>Mobiles & Accessories</option>
+                    <option>Headphones, Earbuds & Accessories</option>
+                    <option>Cameras & Photography</option>
+
+                </select>
+                <input type="text" placeholder="Search here..." class="search_1">
+                <button type="submit" class="search_1_search"><i class="fa-solid fa-magnifying-glass fa-xl"></i></button>
+                <button class="search_1_cart"><i class="fa-solid fa-cart-shopping fa-xl"></i></button>
+                <button class="search_1_wish"><i class="fa-regular fa-heart fa-xl"></i></button>
+                <button class="search_1_user"><i class="fa-regular fa-user fa-xl"></i></button>
+            </form>
+        </div>
+
+        
+        <div class="nav_bar">    
+            <form class="form_select">
+                <i class="fa-solid fa-bars fa-xl"></i>
+                <select class="select_2">
+                    <option>Shop By Department</option>
+                    <option>Computers & Accessories</option>
+                    <option>Mobiles & Accessories</option>
+                    <option>Headphones, Earbuds & Accessories</option>
+                    <option>Cameras & Photography</option>
+                </select>
+
+                </form>
+                <ul class="nav_1">
+                    <li class="home_1">
+                        <a href="home.html" class="a_1">HOME</a>
+                    </li>
+                    <li class="list_1">
+                        <a href="D:\Python\E-Gadgets\pms\templates\aboutus.html" class="a_1">ABOUT</a>
+                    </li>
+                    <li class="list_1">
+                        <a href="contact.html" class="a_1">CONTACT</a>
+                    </li>
+                    <li class="list_1">
+                        <a href="blog.html" class="a_1">BLOG</a>
+                    </li>
+                    <li class="list_1">
+                        <a href="shop.html" class="a_1">SHOP</a>
+                    </li>
+                    <li class="list_1">
+                        <a href="feedback.html" class="a_1">FEEDBACK</a>
+                    </li>
+                </ul>
+                <button class="support"><i class="fa-solid fa-phone fa-xl"></i></button>
+                <pre class="support_text">24/7 SUPPORT
++48 500 500 500
+                </pre>
+            </div>
+
+    </header>
+    
+    <h1>CONTACT US</h1>
+        <center><div id="ul_1"></div></center>
+        <p>Here is how you can reach me</p>
+
+        <form>
+            <div class="contact">
+                <div class="form-content">
+                    <input type="text" class="name" required>
+                    <label>Name</label>
+                </div>
+                <div class="form-content">
+
+                    <input type="text" class="subject" required>
+                    <label>Subject</label>
+                </div>
+                <div class="form-content">
+
+                    <input type="email" class="email" required>
+                    <label>Email</label>
+                </div>
+                <div class="form-content">
+
+                    <input type="text" class="phone" required>
+                    <label> Phone No</label>
+                </div>
+
+               <center><textarea class="textarea1" placeholder="Enter Message" required></textarea></center>
+
+            </div>
+            <button type="submit" class="btn-3">Submit</button>
+        </form>
+            <div id="bg_color"><br><br>
+                <div id="contact-1">
+                    <div id="contact-2">
+                        <i class="fas fa-address-card fa-2x"></i>
+                        <h3>
+                            ADDRESS
+                        </h3>                        
+                        <p id="pre_1">
+                            306, Unnati Informatics LLP,<br>
+                             Hir asha arcade Sagar Sangeet<br>
+                              apartment Sola, Ahmedabad
+                        </p>
+                    </div>
+                    <iframe src=" https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3670.5566740285476!2d72.51571171477042!3d23.07670928492577!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e835894a2e61f%3A0x8afa9fa238c18646!2sUnnati%20Informatics%20LLP!5e0!3m2!1sen!2sin!4v1677684132917!5m2!1sen!2sin"  width="400" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>  
+
+
+
+
+
+    
+
+    <div id="bg_color">
+        <footer id="footer">
+           <div>
+               <h3>Company</h3>
+               <div id="ul_1"></div>
+               <p> 306, Unnati Informatics LLP, Hir asha arcade Sagar Sangeet apartment Sola, Ahmedabad</p>
+           </div>
+           <div>
+               <center><h3>Navigate</h3>
+               <div id="ul_1"></div></center>
+               <ul id="list_2">
+               <li id="list_2_1">Home</li><br>
+              <li id="list_2_1">About</li><br>
+              <li id="list_2_1">Activities</li><br>
+              <li id="list_2_1">Blog</li><br>
+              <li id="list_2_1">Project</li><br>
+              <li id="list_2_1">Contact</li><br>
+               </ul>
+           </div>
+           <div>
+               <h3>Follow Me</h3>
+               <div id="ul_1"></div>
+               <div>
+                   <a href="#"><i class="fab fa-facebook-f fa-2"  id="social"></i></a>
+                   <a href="#"><i class="fab fa-twitter fa-2"  id="social"></i></a>
+                   <a href="#"><i class="fab fa-instagram fa-2"  id="social"></i></a>
+                   <a href="#"><i class="fab fa-linkedin-in fa-2"  id="social"></i></a>
+               </div>
+               <i class="fas fa-envelope fa-2x" id="social_1"></i>
+               <h3>EMAIL</h3>
+               <p id="bg_color_2">info@unnatiinformatics.com</p>
+               <i class="fas fa-phone fa-2x" id="social_1"></i>
+               <h3>PHONE</h3>
+               <p id="bg_color_2">(+91) 98793 10901</p>
+           </div>
+       </footer>
+       <p id="copy">Copyright © 2023 Reserved</p>
+       </div>
+
+
+
+
+
+
+    
+</body>
+</html>

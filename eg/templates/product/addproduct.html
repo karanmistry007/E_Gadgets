@@ -1,0 +1,65 @@
+
+{% extends './Base.html' %} {%load crispy_forms_tags %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body >
+    {% block content %} 
+    <div class="row" >
+      <div class="col-xl" >
+        <div class="card mb-4" style="height: auto;color: black;">
+          <div class="card-header d-flex justify-content-between align-items-center">
+            <h5 class="mb-0" style="font-size: 20px;"><b>Create Product</b></h5>
+            
+          </div>
+          <div class="card-body">
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+              <div class="mb-3">
+                
+                <div class="input-group input-group-merge">
+                  <span
+                    id="basic-icon-default-fullname2"
+                    class="input-group-text"></span>
+                  {% comment %} <input
+                    type="text"
+                    class="form-control"
+                    id="basic-icon-default-fullname"
+                    placeholder="John Doe"
+                    aria-label="John Doe"
+                    aria-describedby="basic-icon-default-fullname2"
+                  /> {% endcomment %}
+                  <div class="form-control">
+                    {{form.productName | as_crispy_field}}
+                    {{form.productBrand | as_crispy_field}}
+                    {{form.productPrice | as_crispy_field}}
+                    {{form.productQty | as_crispy_field}}
+                    {{form.productImage1 | as_crispy_field}}
+                    {{form.productImage2 | as_crispy_field}}
+                    {{form.productImage3 | as_crispy_field}}
+                    {{form.productCategory | as_crispy_field}}
+                    {{form.productDesc | as_crispy_field}}
+                    {{form.productStatus | as_crispy_field}}
+                    {{form.productColor | as_crispy_field}}
+
+                  
+                  
+                  </div>
+                </div>
+              
+              </div>
+              <button type="submit" class="btn btn-primary">Send</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endblock content %}
+  </body>
+</html>

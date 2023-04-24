@@ -1,0 +1,45 @@
+{% extends './Base.html' %} {%load crispy_forms_tags %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body >
+    {% block content %} 
+    <div class="row">
+      <div class="col-xl">
+        <div class="card mb-4" style="height: 600px;color: black;">
+          <div class="card-header d-flex justify-content-between align-items-center">
+            <h5 class="vendor_heading" style="color: #ff7d1a; "><b>Vendor Profile</b></h5>
+            
+          </div>
+          <div class="card-body">
+            <form method="POST">
+                <div class="vendor_div" >
+                    <p><img src="\media\site\c1.jpg" style="width: 10%;border-radius: 50%;"></p>
+                    
+                    <div class="vendor_detail">Username : {{user.username}}</div>
+                    
+                    <div class="vendor_detail">First Name : {{user.first_name}}</div>
+                    
+                    <div class="vendor_detail">Last Name : {{user.last_name}}</div>
+                    
+                    <div class="vendor_detail">E-mail : {{user.email}}</div>
+                    
+                    <div class="vendor_detail">Contact Number : {{user.contactnum}}</div>
+                      
+                </div>
+        
+              
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endblock content %}
+  </body>
+</html>

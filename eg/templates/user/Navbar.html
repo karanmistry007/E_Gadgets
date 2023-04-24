@@ -1,0 +1,79 @@
+{% load static %}
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static '/navbar/black-dashboard.css' %}">
+        <link rel="stylesheet" href="{% static '/navbar/black-dashboard.min.css' %}">
+        <link rel="stylesheet" href="{% static '/navbar/black-dashboard.css' %}">
+
+        <link rel="stylesheet" href="https://kit.fontawesome.com/ab8f278cc1.css" crossorigin="anonymous">
+        <script src="https://kit.fontawesome.com/ab8f278cc1.js" crossorigin="anonymous"></script>
+    </head>
+
+    <body background="\media\user\login1.jpg" style="background-repeat: no-repeat;background-size: 100%;background-attachment: fixed;">
+
+
+        <div class="sidebar" style="margin-top: 45px;">
+            <!--
+            Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red"
+        -->
+            <div class="sidebar-wrapper ps">
+            <div class="logo">
+                <center><img src="\media\user\logo-2.png" width="130px"></center>
+            </div>
+            <ul class="nav">
+                <li>
+                <a href="{% url 'vendor_dashboard' %}">
+                    <i class="fa-brands fa-stack-overflow"></i>
+                    <p>Dashboard</p>
+                </a>
+                </li>
+                <li>
+                <a href="{% url 'vendor_details' user.id %}">
+                    <i class="fa-regular fa-user"></i>
+                    <p>Vendor</p>
+                </a>
+                </li>
+                <li>
+                <a href="{% url 'getcategories' %}">
+                    <i class="fa-solid fa-list"></i>
+                    <p>Categories</p>
+                </a>
+                </li>
+                <li>
+                <a href="{% url 'getbrands' %}">
+                    <i class="fa-solid fa-copyright"></i>
+                    <p>Brands</p>
+                </a>
+                </li>
+                <li>
+                <a href="">
+                    <i class="fa-regular fa-user"></i>
+                    <p>User Profile</p>
+                </a>
+                </li>
+                <li>
+                <a href="">
+                    <i class="fa-solid fa-puzzle-piece"></i>
+                    <p>Orders</p>
+                </a>
+                </li>
+                <li>
+                <a href="{%url 'about' %}">
+                    <i class="fa-regular fa-keyboard"></i>
+                    <p>About Us</p>
+                </a>
+                </li>
+                <li>
+                <a href="{% url 'contact' %}">
+                    <i class="fa-solid fa-earth-asia"></i>
+                    <p>Contact Us</p>
+                </a>
+                </li>
+             
+            </ul>
+            
+          </div>
+        </div>
+
+    </body>
+</html>

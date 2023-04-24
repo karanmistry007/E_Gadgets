@@ -1,0 +1,557 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>E-Gadgets</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+    <link rel="stylesheet" href="https://kit.fontawesome.com/ab8f278cc1.css" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/ab8f278cc1.js" crossorigin="anonymous"></script>
+    
+    <style>
+        body{
+            /*background-image: linear-gradient(to bottom, #4aa4ff, #00bfff, #00d7ff, #00ecfb, #58ffea);*/
+            background-repeat: no-repeat;
+            
+
+        }
+        .header_1{
+            display: flex;
+            gap: 50px;
+            padding-bottom: 35px;
+            
+           
+            
+        }   
+        .logo{
+            font-size: 40px;
+            font-family: Trebuchet MS;
+            padding: 35px 0px 0px 30px;
+            
+            
+        } 
+        .search_form{
+            padding-top: 55px;
+            padding-left: 150px;
+            margin: 10px;
+            
+        }
+        .select_1{
+            font-size: 18px;
+            width: 150px;
+            height: 44px;
+            position:relative;
+            left: 4px;
+            bottom: 1px;
+            position: relative;
+            font-family: Arial;
+            border: 1px solid #262626;
+            border-right: 0px;
+
+        }
+        
+      
+
+        .search_1{
+            font-size: 20px;
+            width: 400px;
+            height: 40px;
+            border: 1px solid #262626;
+        }
+        .search_1_search{
+            height: 44px;
+            width: 44px;
+            position: relative;
+            bottom: 3px;
+            right: 4px;
+            background: #ff6a00;
+            color:white;
+            border: 1px solid #262626;
+            border-left: 0px;
+            transition: .4s;
+  
+        
+        }
+        .search_1_search:hover{
+            background: #262626;
+        }
+
+
+        .search_1_cart{
+            height: 46px;
+            width: 46px;
+            margin-left: 300px;
+            border: 0px;
+            background-color: rgba(255, 255, 255, 0);
+            color: black;
+            transition: .4s;
+        }
+        .search_1_cart:hover{
+            color: #ff6a00;
+        }
+        .search_1_wish{
+            height: 46px;
+            width: 46px;
+            margin-left: 15px;
+            border: 0px;
+            background-color: rgba(255, 255, 255, 0);
+            color: black;
+            transition: .4s;
+        }
+        .search_1_wish:hover{
+            color: #ff6a00;
+        }
+        .search_1_user{
+            height: 46px;
+            width: 46px;
+            margin-left: 15px;
+            border: 0px;
+            background-color: rgba(255, 255, 255, 0);
+            color: black;
+            transition: .4s;
+        }
+        .search_1_user:hover{
+            color: #ff6a00;
+        }
+
+        
+
+
+
+
+        .nav_bar{
+            background: linear-gradient(to left,#82c9ff,#a3bfff,#e2a2ff,#ff9fe1);
+            display: flex;
+            
+            
+        }
+        .form_select{  
+            margin-left: 30px;
+            padding-left: 10px;
+            background-color:#262626; 
+            color: white;
+            padding-top:12px;
+        
+        }
+        .select_2{
+            font-size: 18px;
+            width: 200px;
+            height: 46px;
+            border: 0px;
+            background: #262626;
+            color: white;
+            position: relative;
+            font-family: Arial;
+
+            
+            
+
+        }
+        .nav_1{
+            display: flex;
+            padding-left: 130px;
+            padding-top: 5px;
+            gap: 40px;
+            list-style-type: none;
+            height: 10px;
+            font-size: 20px;
+        }
+
+        .a_1{
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            font-family: sans-serif;
+            transition: .4s;
+        }
+        .a_1:hover{
+            color: #ff6a00;
+        }
+        .support{
+            background: transparent;
+            border: 0px;
+            color: #ff6a00;
+            padding-left: 350px;
+        }
+        .support_text{
+            color: white;
+            font-size: 100%;
+            position: relative;
+            top: 8px;
+            left:5px;
+        }
+        #ul_1{
+            height: 2px;
+            width: 80px;
+            background: #ff6a00;
+            display: block;
+            margin: 0.5rem 0;
+        }
+        #ul_2{
+            height: 3px;
+            width: 100%;
+            background: #ff6a00;
+            display: block;
+            margin: 0.5rem 0;
+        }
+
+
+
+
+        .container1{
+            position: relative;
+            text-align: center;
+            color: black;
+        }
+        .button_left{   
+            position: absolute;
+            top: 50%;
+            left: 2%;
+            transform: translate(-50%, -50%);  
+            background: transparent;
+            border: 0px; 
+            color:rgba(0, 0, 0, 0.35);  
+            transition: .4s;
+        }
+        .button_left:hover{
+            color: black;
+        }
+        .button_right{
+            display: inline;
+            position: absolute;
+            top: 50%;
+            right: 2%;
+            transform: translate(-50%, -50%);   
+            background: transparent;
+            border: 0px; 
+            color:rgba(0, 0, 0, 0.35);     
+            transition: .4s;   
+        }
+        .button_right:hover{
+            color: black;
+        }
+        .image_1{
+            position: inherit;
+            height: 550px;
+            width: 1510px;
+        }
+        .mySlides {
+            display:none;
+        }
+        .text_image{
+            text-align: left;
+            font-size: 135%;
+            font-family: 'Segoe UI';
+            position: absolute;
+            top: 15%;
+            right: 15%;
+        }
+        .add_to_cart{
+            font-size: 90%;
+            height: 50px;
+            width: 150px;
+            background: #ff6a00;
+            color: white;
+            border: 0px;
+        }
+
+        .container2{
+            margin: 30px;
+            
+        }
+        .banner{
+            width: 450px;
+            margin: 12px;
+            transition: transform .4s;
+            
+
+        }
+        .banner:hover{
+            transform: scale(1.15);
+        }
+
+
+
+
+
+
+
+
+
+
+        #bg_color{
+            background-color:rgb(66, 66, 66);
+            color: lightgray;
+        }
+        #footer{
+            display: flex;
+            padding:50px 200px ;
+            gap: 300px;
+            text-align: left;
+        }
+        #list_2{
+            list-style-type: none;
+            text-align: left;
+        }
+        #social{
+            border-radius: 50%;
+            width: 6px;
+            height: 8px;
+            padding: 14px 20px 14px 14px;
+            line-height: 6px;
+            color: white;
+            background: grey;
+        }
+        #social:hover{
+            background-color: #ff6a00;
+            color: black;
+        }
+        #social_1{
+            color:white;
+            margin: 5px;
+        }
+        #copy{
+            text-align: center;
+            padding-bottom: 30px;
+        }
+        #list_2_1:hover{
+            color: #ff6a00;
+            text-align: center;
+        }
+        #bg_color_2{
+            padding: 10px 30px;
+        }
+        #bg_color_2:hover{
+            background-color: #ff6a00;
+        }
+        .pi{
+            border-radius: 100%;
+            width: 70px;
+            height: 70px;
+            line-height: 70px;
+            text-align: center;
+            padding: 30px;;
+            transition: all 1s;
+            color: white;
+            background: grey;
+            position: relative;
+        }
+        .pi:hover{
+            background: #ff6a00;
+            width: 100px;
+            height: 100px;
+            line-height: 90px;
+        }
+        .pr{
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            font-size: 28px;
+            background: #ff6a00;
+            color: white;
+            border-radius: 50%;
+            height: 15px;
+            width: 15px;
+            line-height: 15px;
+            padding: 16px;
+        }
+
+
+    </style>
+
+
+</head>
+<body>
+    <header>
+        <div class="header_1">
+            <h1 class="logo">
+                E-Gadgets
+            </h1>
+
+            <form class="search_form">
+                <select class="select_1">
+                    <option>All Category</option>
+                    <option>Computers & Accessories</option>
+                    <option>Mobiles & Accessories</option>
+                    <option>Headphones, Earbuds & Accessories</option>
+                    <option>Cameras & Photography</option>
+
+                </select>
+                <input type="text" placeholder="Search here..." class="search_1">
+                <button type="submit" class="search_1_search"><i class="fa-solid fa-magnifying-glass fa-xl"></i></button>
+                <a href="cart.html" class="search_1_cart"><i class="fa-solid fa-cart-shopping fa-xl"></i></a>
+                <a href="wishlist.html" class="search_1_wish"><i class="fa-regular fa-heart fa-xl"></i></a>
+                <a href="user.html" class="search_1_user"><i class="fa-regular fa-user fa-xl"></i></a>
+            </form>
+        </div>
+
+        
+        <div class="nav_bar">    
+            <form class="form_select">
+                <i class="fa-solid fa-bars fa-xl"></i>
+                <select class="select_2">
+                    <option>Shop By Department</option>
+                    <option>Computers & Accessories</option>
+                    <option>Mobiles & Accessories</option>
+                    <option>Headphones, Earbuds & Accessories</option>
+                    <option>Cameras & Photography</option>
+                </select>
+
+                </form>
+                <ul class="nav_1">
+                    <li class="home_1">
+                        <a href="home.html" class="a_1">HOME</a>
+                    </li>
+                    <li class="list_1">
+                        <a href="D:\Python\E-Gadgets\pms\templates\aboutus.html" class="a_1">ABOUT</a>
+                    </li>
+                    <li class="list_1">
+                        <a href="contact.html" class="a_1">CONTACT</a>
+                    </li>
+                    <li class="list_1">
+                        <a href="blog.html" class="a_1">BLOG</a>
+                    </li>
+                    <li class="list_1">
+                        <a href="shop.html" class="a_1">SHOP</a>
+                    </li>
+                    <li class="list_1">
+                        <a href="feedback.html" class="a_1">FEEDBACK</a>
+                    </li>
+                </ul>
+                <button class="support"><i class="fa-solid fa-phone fa-xl"></i></button>
+                <pre class="support_text">24/7 SUPPORT
++48 500 500 500
+                </pre>
+            </div>
+
+    </header>
+    <div>
+       <br>
+       <br>
+       
+
+
+       
+        
+        <div class="container1">
+            
+            <div class="mySlides">
+                <img src="images\1.jpg" class="image_1">
+                <div class="text_image">
+                    <h1>X-box Wireless Controller</h1>
+                    <div id="ul_1"></div>
+                    <h3>Elevate your game</h3>
+                    <pre>Featuring sculpted surfaces
+and refined geometry for enhanced
+comfort during gameplay.</pre>
+                    <h3>Only on ₹5,390</h3>
+                    <button class="add_to_cart"><b>SHOP NOW</b></button>
+                </div>
+            </div>
+            <button class="button_left" onclick="plusDivs(-1)"><i class="fa-solid fa-chevron-left fa-3x"></i></button>
+            
+            
+            <div class="mySlides">
+                <img src="D:\Python\E-Gadgets\pms\templates\blog\images\2.jpg" class="image_1">
+                <div class="text_image">
+                    <h1>Beats Wireless Headphones</h1>
+                    <div id="ul_1"></div>
+                    <h3>Feel the Music</h3>
+                    <pre>Beats Solo3 Wireless delivers
+premium playback with fine-tuned
+acoustics that maximize clarity
+breadth, and balance.</pre>
+                    <h3>Only on ₹16,260</h3>
+                    <button class="add_to_cart"><b>SHOP NOW</b></button>
+                </div>
+            </div>
+            <button class="button_right" onclick="plusDivs(1)"><i class="fa-solid fa-chevron-right fa-3x"></i></button>
+        </div>
+
+        <br><br><br><br>
+
+        <div class="container2">
+            <img src="D:\Python\E-Gadgets\pms\templates\blog\images\banner1.jpg" class="banner">
+            <img src="D:\Python\E-Gadgets\pms\templates\blog\images\banner2.jpg" class="banner">
+            <img src="D:\Python\E-Gadgets\pms\templates\blog\images\banner3.jpg" class="banner">
+        </div>
+
+
+
+
+
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+    </div>
+
+    <div id="bg_color">
+        <footer id="footer">
+           <div>
+               <h3>Company</h3>
+               <div id="ul_1"></div>
+               <p> 306, Unnati Informatics LLP, Hir asha arcade Sagar Sangeet apartment Sola, Ahmedabad</p>
+           </div>
+           <div>
+               <center><h3>Navigate</h3>
+               <div id="ul_1"></div></center>
+               <ul id="list_2">
+               <li id="list_2_1">Home</li><br>
+              <li id="list_2_1">About</li><br>
+              <li id="list_2_1">Activities</li><br>
+              <li id="list_2_1">Blog</li><br>
+              <li id="list_2_1">Project</li><br>
+              <li id="list_2_1">Contact</li><br>
+               </ul>
+           </div>
+           <div>
+               <h3>Follow Me</h3>
+               <div id="ul_1"></div>
+               <div>
+                   <a href="#"><i class="fab fa-facebook-f fa-2"  id="social"></i></a>
+                   <a href="#"><i class="fab fa-twitter fa-2"  id="social"></i></a>
+                   <a href="#"><i class="fab fa-instagram fa-2"  id="social"></i></a>
+                   <a href="#"><i class="fab fa-linkedin-in fa-2"  id="social"></i></a>
+               </div>
+               <i class="fas fa-envelope fa-2x" id="social_1"></i>
+               <h3>EMAIL</h3>
+               <p id="bg_color_2">info@unnatiinformatics.com</p>
+               <i class="fas fa-phone fa-2x" id="social_1"></i>
+               <h3>PHONE</h3>
+               <p id="bg_color_2">(+91) 98793 10901</p>
+           </div>
+       </footer>
+       <p id="copy">Copyright © 2023 Reserved</p>
+       </div>
+
+
+
+
+
+
+
+       <script>
+            var slideIndex = 1;
+            showDivs(slideIndex);
+
+            function plusDivs(n) {
+            showDivs(slideIndex += n);
+            }
+
+            function showDivs(n) {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            if (n > x.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = x.length}
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";  
+            }
+            x[slideIndex-1].style.display = "block";  
+            }
+            
+       </script>
+    
+</body>
+</html>

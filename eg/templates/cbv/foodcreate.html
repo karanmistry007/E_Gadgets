@@ -1,0 +1,31 @@
+
+{% extends '../base.html' %}
+{% comment %} load crispy tag {% endcomment %}
+{% load crispy_forms_tags %}
+
+
+{% block header %}
+  {% include '../header.html' %}
+{% endblock header %}
+  
+
+
+{% comment %} {% include '../header.html' %} {% endcomment %}
+
+{% block content %}
+  
+
+  
+<form method = "POST" enctype ="multipart/form-data">
+  {% csrf_token %}
+  {% comment %} {{ form | crispy }} {% endcomment %}
+  {% comment %} {{from | crispy}}
+
+  {{form.name}}
+  {{form.name | as_crispy_field}} {% endcomment %}
+  {{form.as_p}}
+  
+<input type="submit" value="Submit" />
+
+</form>
+{% endblock content %}

@@ -1,0 +1,217 @@
+{% extends './Base.html' %} {%load crispy_forms_tags %} {% block content %} {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script>
+      function searchFromProduct(){
+        var input, filter, table, tr, td, i, txtValue;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("myTable");
+        tr = table.getElementsByTagName("tr");
+        for (i = 0; i < tr.length; i++) {
+          td = tr[i].getElementsByTagName("td")[1];
+          if (td) {
+            txtValue = td.textContent || td.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+              tr[i].style.display = "";
+            } else {
+              tr[i].style.display = "none";
+            }
+          }
+        }
+      }
+
+    </script>
+   
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+
+    
+
+
+  </head>
+  <style>
+    #toaster {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      border-radius: 5px;
+      display: none;
+    }
+
+    td, th{
+      text-align: center !important;
+      white-space:nowrap !important;
+      overflow:hidden !important;
+      text-overflow:ellipsis !important;
+      max-width: 40px !important;
+      margin-left: 0px !important;
+    }
+    thead{
+      margin-left: 1000px !important;
+    }
+    #ul_1{
+      height: 1px;
+      width: 1000px;
+      background: #ff7d1a;
+      border-bottom: #ff7d1a ;
+      margin: 0.5rem 0;
+    }
+    #ul_2{
+      height: 2px;
+      width: 100%;
+      background: #ff7d1a;
+      display: block;
+
+    }
+    .vendor_heading{
+      font-size: 40px;
+      text-align: center;
+      position: relative;
+      left: 38%; 
+      border-bottom: 1px solid black;
+    }
+    .vendor_div{
+      font-size: 1.5rem;
+      text-align: center;
+    }
+    .vendor_detail{
+      border-bottom: 1px solid #ff7d1a;
+      margin: 20px 400px;
+    }
+    .h5{
+      font-size: 1.5rem !important;
+      margin-bottom: 10px !important;
+      padding-left: 0px !important;
+    }
+
+    #myInput{
+      background: transparent;
+      border: 1px solid black;
+      border-radius: 8px;
+      padding: 8px;
+      position: relative;
+      margin-bottom: 10px;
+
+    }
+
+
+
+  </style>
+  <body>
+    
+    <script>
+      function showToaster(message) {
+        var toaster = document.getElementById("toaster");
+        toaster.innerHTML = message;
+        toaster.style.display = "block";
+        setTimeout(function () {
+          toaster.style.display = "none";
+        }, 1800); // hide after 5 seconds
+      }
+    </script>
+
+   
+
+
+    <div class="card">
+      <h5 class="card-header h5">PRODUCTS</h5>
+
+      <div id="toaster"></div>
+      <input type="text" id="myInput" name="input" onkeyup="searchFromProduct()" placeholder="Search for Product Names.." title="Enter The Name" />
+
+
+      
+      <script type="text/javascript">
+        function DeleteData(id) {
+          if (confirm("Are you sure you want to delete?")) {
+            $.ajax({
+              type: "GET",
+              url: "/product/deleteproduct/" + id,
+              success: function (data) {
+                console.log(data);
+
+                //alert("Deleted successfully");
+                showToaster("Deleted successfully");
+                setTimeout(() => {
+                  location.reload();
+                }, 1000);
+              },
+              error: function (data) {
+                console.log(data);
+                alert("Error");
+              },
+            });
+          }
+        }
+      </script>
+      
+      <div class="table-responsive text-nowrap">
+        <a href="/product/addproduct" class="btn btn-primary">Create</a>
+        <table class="table" id="myTable">
+          <thead>
+            <tr>
+              <th>Image</th>
+              <th>Product</th>
+              <th>Brand</th>
+              <th>Price</th>
+              <th>Category</th>
+              <th>Quantity</th>
+              <th>COLOR</th>
+              <th>Status</th>
+              <th>Actions</th>
+          </tr>
+          </thead>
+          <tbody class="table-border-bottom-0">
+            {% for product in product %}
+            <tr>
+    
+              <td><img src =\media\{{product.productImage1}}/ style="max-width: 80px;max-height: 80px;"></td>
+              <td>
+                  <strong>{{product.productName}}</strong>
+              </td>
+              <td>{{product.productBrand__brandName}}</td>
+              <td>₹ {{product.productPrice}}</td> 
+              <td>{{product.productCategory__categoryName}}</td>
+              <td>{{product.productQty}}</td>
+              <td>{{product.productColor}}</td>
+              {% if product.productStatus %}
+              <td><span class="badge bg-label-active me-1">Active</span></td>
+              {% else %}
+              <td><span class="badge bg-label-not-active me-1 ">Not Active</span></td>
+              {% endif %}
+              <td>
+                <div class="dropdown">
+                  <a class="dropdown-item" href ="{% url 'updateproduct' product.id %}"
+                    ><i class="bx bx-edit-alt me-1"></i> Edit</a
+                  >
+                  <button
+                    onclick="DeleteData({{product.id}})"
+                    class="dropdown-item"
+                  >
+                    <i class="bx bx-trash me-1"></i>Delete
+                  </button>
+                  <a class="dropdown-item" href ="{% url 'productdetail' product.id %}"
+                    ><i class="fa-solid fa-circle-info me-1"></i> Details</a
+                  >
+                </div>
+              </td>
+            </tr>
+
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>
+{% endblock content %}

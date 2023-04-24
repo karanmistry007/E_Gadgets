@@ -1,0 +1,89 @@
+ {%load crispy_forms_tags %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://kit.fontawesome.com/ab8f278cc1.css" crossorigin="anonymous">
+  <script src="https://kit.fontawesome.com/ab8f278cc1.js" crossorigin="anonymous"></script>
+
+  <title>E-Gadgets</title>
+
+  {% load static %}
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="{% static 'site/bootstrap.css' %}" />
+  <!-- core css -->
+  <link href="{% static 'site/style.css' %}" rel="stylesheet" />
+
+  </head>
+  <body>
+    <header class="header_section">
+        <div class="container-fluid">
+          <nav class="navbar navbar-expand-lg custom_nav-container ">
+            <a class="" href="{% url 'user_dashboard' %}" >
+                <img src="\media\site\logo-2.png" class="logo">
+            </a>
+      
+  
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav">
+                
+                <li class="nav-item active">
+                  <a class="nav-link" href="{% url 'user_dashboard' %}">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link"  href="#section-2"> Shop </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'about' %}"> About </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'contact' %}">Contact Us</a>
+                </li>
+              </ul>
+  
+              <div id="toaster"></div>
+              <input type="text" id="myInput" name="input" onkeydown="searchFromProduct()" placeholder="Search Here..." title="Enter The Name" />
+              <button id="Search" onclick="searchFromProduct()">
+                <i class="fa fa-search" aria-hidden="true"></i>
+              </button>
+  
+  
+              
+  
+  
+              <div class="user_option-box" >
+                <a href="{% url 'cart' %}">
+                  <img src="\media\site\cart.png" style="max-height:25px;">
+                </a>
+                <a href="{% url 'user_update' user.id %}">
+                  <i class="fa fa-user" aria-hidden="true"></i>
+                  {{user.username}}
+                </a>
+              </div>
+            </div>
+          </nav>
+        </div>
+        <center><div id="ul_2"></div></center>
+      </header>
+      
+      <!-- end header section -->
+      <!-- Main Content -->
+    <div style="padding: 100px 0px 0px 400px;width: 70%;font-size: 0.8rem;max-height: 100px;">
+        <h1>
+            User Profile
+        </h1>
+        <form method="post">
+            {{form.username | as_crispy_field}}
+            {{form.email | as_crispy_field}}
+            {{form.password | as_crispy_field}}
+            {{form.first_name | as_crispy_field}}
+            {{form.last_name | as_crispy_field}}
+            {{form.contactnum | as_crispy_field}}
+            <button type="submit" class="btn btn-primary">Update Profile</button>
+        </form>
+    </div>
+  </body>
+</html>
