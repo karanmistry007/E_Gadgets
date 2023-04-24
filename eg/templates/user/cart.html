@@ -167,7 +167,7 @@
                                 <li><span>total:</span>  <span style="color: #ff7d1a;">₹ {{total_price}}</span></li>
                             </ul>
                             <div class="cart-btn mt-100">
-                                <center><a href="{% url 'checkout' %}" class="checkout_button" >Checkout</a></center>
+                                <center><a href="{% url 'checkout' user.id %}" class="checkout_button" >Checkout</a></center>
                             </div>
                         </div>
                     </div>

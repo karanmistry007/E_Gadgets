@@ -37,6 +37,21 @@ class UserUpdateView(UpdateView):
     template_name = 'user/user_update.html'
     success_url = "/user/user/dashboard"
 
+class UserCheckoutView(UpdateView):
+    model = User
+    fields=('username', 'email', 'password', 'first_name','last_name','contactnum','address','city','zipcode','comment')
+
+    
+    def get(self, request, *args, **kwargs):
+        cart=Cart(request)
+        total_price = cart.get_total_price()
+        context = {
+        'cart': cart,
+        'total_price': total_price
+        }
+        return render(request,'user/checkout.html',context=context)
+    success_url = "/user/checkout"
+    template_name = 'user/checkout.html'
 
 
 class VendorRegisterView(CreateView):
@@ -165,16 +180,16 @@ class Contact(ListView):
 #     template_name = 'user/cart.html'
 
 
-class Checkout(ListView):
-    def get(self, request, *args, **kwargs):
-        cart=Cart(request)
-        total_price = cart.get_total_price()
-        context = {
-        'cart': cart,
-        'total_price': total_price
-        }
-        return render(request,'user/checkout.html',context=context)
-    template_name = 'user/checkout.html'
+# class Checkout(ListView):
+#     def get(self, request, *args, **kwargs):
+#         cart=Cart(request)
+#         total_price = cart.get_total_price()
+#         context = {
+#         'cart': cart,
+#         'total_price': total_price
+#         }
+#         return render(request,'user/checkout.html',context=context)
+#     template_name = 'user/checkout.html'
         
 class About(ListView):
     def get(self,request,*args,**kwargs):

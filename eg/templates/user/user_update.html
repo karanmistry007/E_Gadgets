@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://kit.fontawesome.com/ab8f278cc1.css" crossorigin="anonymous">
   <script src="https://kit.fontawesome.com/ab8f278cc1.js" crossorigin="anonymous"></script>
 
-  <title>E-Gadgets</title>
+  <title>User Profile</title>
 
   {% load static %}
   <!-- bootstrap core css -->
@@ -76,6 +76,7 @@
             User Profile
         </h1>
         <form method="post">
+          {% csrf_token %}
             {{form.username | as_crispy_field}}
             {{form.email | as_crispy_field}}
             {{form.password | as_crispy_field}}

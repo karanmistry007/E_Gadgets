@@ -18,7 +18,7 @@ urlpatterns = [
  path('vendor/details/<int:id>',VendorDetails.as_view(),name='vendor_details'),
  path('user/contact/',Contact.as_view(),name='contact'), 
 #  path('user/cart/',Cart.as_view(),name='cart'),
- path('user/checkout/',Checkout.as_view(),name='checkout'),
+ path('user/checkout/<int:pk>',UserCheckoutView.as_view(),name='checkout'),
  path('user/about.html',About.as_view(),name='about'),
  #cart
  path('cart/add/<int:id>/', views.cart_add, name='cart_add'),
