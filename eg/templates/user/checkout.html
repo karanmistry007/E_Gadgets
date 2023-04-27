@@ -1,8 +1,9 @@
 <!DOCTYPE html>
+{% block content %}
 <html lang="en">
 
 <head>
-    {% load static %} {%load crispy_forms_tags %} 
+    {% load static %} {% load crispy_forms_tags %}
     <meta charset="UTF-8">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -101,77 +102,97 @@
             <div class="row">
                 <div class="col-12 col-lg-8">
                     <div class="checkout_details_area mt-50 clearfix">
-
+                      
                         <div class="cart-title">
                             <h2>Checkout</h2>
                         </div>
 
-                        <form action="#" method="post">
+                        <form action="" method="post">
                           {% csrf_token %}
                             <div class="row">
                                 <div class="col-md-6 mb-3">
+                                  First Name:
                                     <input type="text" class="form-control" id="first_name" name="first_name" value="{{user.first_name}}"  required>
                                 </div>
                                 <div class="col-md-6 mb-3">
+                                  Last Name:
                                     <input type="text" class="form-control" id="last_name" name="last_name" value="{{user.last_name}}"  required>
                                 </div>
                                 <!-- <div class="col-12 mb-3">
                                     <input type="text" class="form-control" id="company" placeholder="Company Name" value="">
                                 </div> -->
                                 <div class="col-12 mb-3">
+                                  Username:
+                                    <input type="name" class="form-control" id="username" name="username" value="{{user.username}}">
+                                </div>
+                                <div class="col-12 mb-3">
+                                  E-mail:
                                     <input type="email" class="form-control" id="email" name="email" value="{{user.email}}">
                                 </div>
                                 <div class="col-12 mb-3">
-                                  
+                                
                                 </div>
                                 <div class="col-12 mb-3">
+                                  Address:
                                     <input type="text" class="form-control mb-3" id="street_address" name="address" placeholder="Address" value="{{user.address}}">
+                                </div> <div class="col-12 mb-3">
+                                  State:
+                                    <input type="text" class="form-control" id="city" placeholder="State" name="state" value="{{user.state}}">
                                 </div>
                                 <div class="col-12 mb-3">
+                                  City:
                                     <input type="text" class="form-control" id="city" placeholder="City" name="city" value="{{user.city}}">
                                 </div>
                                 <div class="col-md-6 mb-3">
+                                  ZipCode:
                                     <input type="text" class="form-control" id="zipCode" placeholder="Zip Code" name="zipcode" value="{{user.zipcode}}">
                                 </div>
                                 <div class="col-md-6 mb-3">
+                                  Contact Number:
                                     <input type="number" class="form-control" id="phone_number" min="0" name="contactnum" value="{{user.contactnum}}">
                                 </div>
                                 <div class="col-12 mb-3">
+                                  Comment
                                     <textarea name="comment" class="form-control w-100" id="comment" cols="30" rows="10" name="comment" placeholder="Leave a comment about your order"></textarea>
                                 </div>
+                          </div>
+                                <div class="row" style="grid-template-columns: 1fr 0.5fr;">
 
-                            </div>
+                                    <div class="cart-summary">
+                                      <h5>Cart Total</h5>
+                                      <center><div id="ul_1"></div></center>
+                                      <ul class="summary-table" style="padding-top: 20px;">
+                                          <li class="checkout_total"><span>sub total:</span> <span style="color: #ff7d1a;">₹ {{total_price}}</span></li>
+                                          <li class="checkout_total"><span>delivery:</span> <span>Free</span></li>
+                                          <li class="checkout_total"><span>total:</span>  <span style="color: #ff7d1a;">₹ {{total_price}}</span></li>
+                                      </ul>
+                  
+                                          <div class="payment-method">
+                                              <!-- Cash on delivery -->
+                                              <div class="custom-control custom-checkbox mr-sm-2">
+                                                  <input type="radio" class="custom-control-input" id="cod" name="payment" checked>
+                                                  <label class="custom-control-label" for="cod" >Cash on Delivery</label>
+                                              </div>
+                                              <!-- Paypal -->
+                                              <div class="custom-control custom-checkbox mr-sm-2">
+                                                  <input type="radio" class="custom-control-input" id="paypal" name="payment">
+                                                  <label class="custom-control-label" for="paypal">Paypal <img class="ml-15" src="img/core-img/paypal.png" alt=""></label>
+                                              </div>
+                                              <div class="cart-btn mt-100">
+                                                <center><input type="submit" class="checkout_button" value="Checkout"></center>
+                                              </div>
+                                          </div>
+                  
+                                    </div>
+                                  </div>
+
+                            
                         </form>
                     </div>
                 </div>
-                <div class="col-12 col-lg-4">
-                  <div class="cart-summary">
-                    <h5>Cart Total</h5>
-                    <center><div id="ul_1"></div></center>
-                    <ul class="summary-table" style="padding-top: 20px;">
-                        <li class="checkout_total"><span>sub total:</span> <span style="color: #ff7d1a;">₹ {{total_price}}</span></li>
-                        <li class="checkout_total"><span>delivery:</span> <span>Free</span></li>
-                        <li class="checkout_total"><span>total:</span>  <span style="color: #ff7d1a;">₹ {{total_price}}</span></li>
-                    </ul>
-
-                        <div class="payment-method">
-                            <!-- Cash on delivery -->
-                            <div class="custom-control custom-checkbox mr-sm-2">
-                                <input type="radio" class="custom-control-input" id="cod" name="payment" checked>
-                                <label class="custom-control-label" for="cod" >Cash on Delivery</label>
-                            </div>
-                            <!-- Paypal -->
-                            <div class="custom-control custom-checkbox mr-sm-2">
-                                <input type="radio" class="custom-control-input" id="paypal" name="payment">
-                                <label class="custom-control-label" for="paypal">Paypal <img class="ml-15" src="img/core-img/paypal.png" alt=""></label>
-                            </div>
-                        </div>
-
-                        <div class="cart-btn mt-100">
-                          <center><input type="submit"  class="checkout_button" value="Checkout"></center>
-                      </div>
-                    </div>
-                </div>
+                
+                  
+                
             </div>
         </div>
     </div>
@@ -269,3 +290,4 @@
 </body>
 
 </html>
+{% endblock %}

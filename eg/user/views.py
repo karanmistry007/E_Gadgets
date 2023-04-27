@@ -5,7 +5,7 @@ from .forms import *
 from django.contrib.auth import login
 from django.contrib.auth.views import LoginView
 from django.views.generic import ListView
-from e_gadgets.models import Product,Category
+from e_gadgets.models import Product,Category,State
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from cart.cart import Cart
@@ -39,19 +39,19 @@ class UserUpdateView(UpdateView):
 
 class UserCheckoutView(UpdateView):
     model = User
-    fields=('username', 'email', 'password', 'first_name','last_name','contactnum','address','city','zipcode','comment')
-
+    fields=('username', 'email', 'first_name','last_name','contactnum','address','city','zipcode','comment','state',)
+    success_url = "/user/user/dashboard"
+    template_name = 'user/checkout.html'
     
     def get(self, request, *args, **kwargs):
         cart=Cart(request)
         total_price = cart.get_total_price()
         context = {
         'cart': cart,
-        'total_price': total_price
+        'total_price': total_price,
         }
-        return render(request,'user/checkout.html',context=context)
-    success_url = "/user/checkout"
-    template_name = 'user/checkout.html'
+        return render(request,'user/checkout.html',context=context,)
+   
 
 
 class VendorRegisterView(CreateView):

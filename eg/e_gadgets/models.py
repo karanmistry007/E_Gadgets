@@ -61,13 +61,13 @@ class Brand(models.Model):
 
 #no 6
 class State(models.Model):
-    stateName=models.CharField(max_length=30)
+    name=models.CharField(max_length=30)
 
     class Meta:
         db_table = 'state'
 
     def __str__(self):
-        return self.stateName 
+        return self.name 
     
 
 
