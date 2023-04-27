@@ -40,7 +40,7 @@ class UserUpdateView(UpdateView):
 class UserCheckoutView(UpdateView):
     model = User
     fields=('username', 'email', 'first_name','last_name','contactnum','address','city','zipcode','comment','state',)
-    success_url = "/user/user/dashboard"
+    success_url = "/user/success"
     template_name = 'user/checkout.html'
     
     def get(self, request, *args, **kwargs):
@@ -51,7 +51,11 @@ class UserCheckoutView(UpdateView):
         'total_price': total_price,
         }
         return render(request,'user/checkout.html',context=context,)
-   
+
+class OrderSuccess(ListView):
+    def get(self, request, *args, **kwargs):
+        return render(request,'user/success.html',{})
+    template_name = 'user/sucess.html'
 
 
 class VendorRegisterView(CreateView):

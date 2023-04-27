@@ -97,8 +97,8 @@
       <!-- end header section -->
 
 
-      <div class="cart-table-area section-padding-100">
-        <div class="container-fluid">
+      <div class="cart-table-area" style="padding-top: 80px;">
+        <div class="container-fluid" >
             <div class="row">
                 <div class="col-12 col-lg-8">
                     <div class="checkout_details_area mt-50 clearfix">
@@ -106,10 +106,10 @@
                         <div class="cart-title">
                             <h2>Checkout</h2>
                         </div>
-
-                        <form action="" method="post">
+                        
+                        <form action="" method="post" style="display: grid;grid-template-columns: 1000px 600px;gap: 50px;">
                           {% csrf_token %}
-                            <div class="row">
+                            <div class="row" style="padding: 20px 60px;">
                                 <div class="col-md-6 mb-3">
                                   First Name:
                                     <input type="text" class="form-control" id="first_name" name="first_name" value="{{user.first_name}}"  required>
@@ -156,7 +156,7 @@
                                     <textarea name="comment" class="form-control w-100" id="comment" cols="30" rows="10" name="comment" placeholder="Leave a comment about your order"></textarea>
                                 </div>
                           </div>
-                                <div class="row" style="grid-template-columns: 1fr 0.5fr;">
+                                <div style="position: relative;right: 10px;max-width: 350px;">
 
                                     <div class="cart-summary">
                                       <h5>Cart Total</h5>
